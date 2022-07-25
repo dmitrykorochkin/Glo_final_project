@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("modal")})();
+(()=>{"use strict";(()=>{const e=document.querySelectorAll(".callback-btn"),l=document.getElementById("callback"),t=document.querySelector(".modal-overlay"),c=document.querySelector(".modal-close");e.forEach((e=>{e.addEventListener("click",(()=>{t.style.display="block",l.style.display="block"}))})),c.addEventListener("click",(()=>{l.style.display="none",t.style.display="none"})),t.addEventListener("click",(e=>{l.style.display="none",t.style.display="none"}))})()})();
