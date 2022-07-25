@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("one.js")})();
+(()=>{"use strict";console.log("modal")})();
