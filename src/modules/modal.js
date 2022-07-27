@@ -19,7 +19,6 @@ const modal = () => {
         
     };
 
-
   const modalCallback = document.getElementById('callback'),
         modalCallbackBtns = document.querySelectorAll('.callback-btn'),
         modalOverlay = document.querySelector('.modal-overlay');
