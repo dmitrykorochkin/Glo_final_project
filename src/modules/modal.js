@@ -20,7 +20,7 @@ const modal = () => {
     };
 
   const modalCallback = document.getElementById('callback'),
-        modalCallbackBtns = document.querySelectorAll('.callback-btn'),
+        modalCallbackBtns = document.querySelectorAll('.fancyboxModal'),
         modalOverlay = document.querySelector('.modal-overlay');
    
     const closeModal = event => {
