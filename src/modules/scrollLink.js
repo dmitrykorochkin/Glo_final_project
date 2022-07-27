@@ -1,42 +1,43 @@
 
 const  scrollLink = () => {
 
-	const anchors = document.querySelectorAll('a[href^="#"]');
-	const upScroll = document.querySelector(".up");
-	const logo = document.querySelector(".logo");
-	
-	for (const anchor of anchors) {
-		
-		anchor.addEventListener("click", e => {
-			e.preventDefault(); 
-			const id = anchor.hasAttribute('href') ? anchor.getAttribute('href') : 'body';
-		
-			document.querySelector(id).scrollIntoView({
-				behavior: "smooth",
-				block: "start"
-			});
-		});
-	}
-
-	const showUp = function () {
-		const block = document.getElementById("services");
-		const contentHeight = document.documentElement.scrollTop;
-		const pageBegin = block.getBoundingClientRect().top;
-	
-		if (Math.abs(pageBegin) <= contentHeight) {
-			upScroll.style.display = "block";
-		} else {
-			upScroll.style.display = "none";
+	const menuBtnAll = document.querySelectorAll(".top-menu a");
+	const btnScrollTop = document.querySelector(".up");
+  
+	btnScrollTop.style.display = "none";
+  
+	menuBtnAll.forEach((elem) => {
+	  elem.addEventListener("click", (event) => {
+		event.preventDefault();
+  
+		const section = document.querySelector(elem.getAttribute("href"));
+  
+		if (section) {
+		  section.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+			inline: "center",
+		  });
 		}
-	  };
-	
-	  upScroll.addEventListener("click", () => window.scroll(0, 0));
-	  window.addEventListener("scroll", showUp);
-	  logo.addEventListener("click", (e) => {
-		e.preventDefault();
-		window.scroll(0, 0);
 	  });
-
+	});
+  
+	window.addEventListener("scroll", () => {
+	  let scrennHeight = document.documentElement.clientHeight;
+	  let coords = window.pageYOffset;
+  
+	  if (scrennHeight > coords) {
+		btnScrollTop.style.display = "none";
+	  } else if (scrennHeight < coords) {
+		btnScrollTop.style.display = "block";
+	  }
+	});
+  
+	btnScrollTop.addEventListener("click", () => {
+	  const html = document.querySelector("html");
+	  html.style.scrollBehavior = "smooth";
+	  document.documentElement.scrollTop = 0;
+	});
 
 };
 
