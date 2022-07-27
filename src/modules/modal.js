@@ -34,7 +34,7 @@ const modal = () => {
 
         
             document.addEventListener('keydown', function(event) {
-                const key = event.key; // const {key} = event; in ES6+
+                const key = event.key; 
                 if (key === "Escape") {
                     modalOverlay.style.display = 'none';
                     modalCallback.style.display = 'none';
