@@ -31,7 +31,19 @@ const modal = () => {
             modalCallback.style.display = 'none';
             
         }
+
+        
+            document.addEventListener('keydown', function(event) {
+                const key = event.key; 
+                if (key === "Escape") {
+                    modalOverlay.style.display = 'none';
+                    modalCallback.style.display = 'none';
+                }
+            });
+        
+       
     };
+   
     
     const openModal = (e) => {
         e.preventDefault();
